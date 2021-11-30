@@ -6,10 +6,12 @@ public class Wplata implements OperacjaBankowa{
 
     int kwota;
     int saldo;
+    boolean wykonano;
 
     public Wplata(int kwota, int saldo) {
         this.kwota = kwota;
         this.saldo = saldo;
+        this.wykonano = false;
     }
 
     @Override

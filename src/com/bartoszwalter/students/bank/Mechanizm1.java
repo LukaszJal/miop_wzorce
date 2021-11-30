@@ -4,7 +4,6 @@ public class Mechanizm1 implements MechanizmOdsetkowy{
     @Override
     public int oblicz(Rachunek rach) {
 
-
         if(rach.saldo()<1000)
          {
              return (int) (rach.saldo() * 0.03);

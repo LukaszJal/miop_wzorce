@@ -4,11 +4,19 @@ package com.bartoszwalter.students.bank;
 
 public class Wypłata implements OperacjaBankowa{
 
-    Rachunek rach1;
     int kwota;
+    int saldo;
+    boolean wykonano;
+
+    public Wypłata(int kwota, int saldo) {
+        this.kwota = kwota;
+        this.saldo = saldo;
+    }
 
     @Override
     public void execute() {
+
+        saldo -= kwota;
 
     }
 }
