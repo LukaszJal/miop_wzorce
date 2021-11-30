@@ -85,8 +85,8 @@ public class Rachunek {
      */
     public int wplata(int kwota) {
 
-        Wplata tmp1 = new Wplata(kwota,this.saldo);
-        tmp1.execute();
+        Wplata nowa_wplata = new Wplata(kwota,this.saldo);
+        nowa_wplata.execute();
         //saldo += kwota;
         historia.add("Wpłata: " + kwota + ", saldo: " + saldo);
         return 0;

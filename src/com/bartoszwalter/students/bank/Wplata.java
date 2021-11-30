@@ -17,6 +17,8 @@ public class Wplata implements OperacjaBankowa{
     @Override
     public void execute() {
 
+        // Dodaję do lokalnego salda kwote. Ale co z nią dalej ?
+        // execute nie zwraca żadnej wartości. W java brak wskaźników, tylko referencje.
         saldo += kwota;
 
     }
