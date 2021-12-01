@@ -9,11 +9,19 @@ public class Starter {
 
 
         rachKowalski.wplata(1500);
-        OperacjaBankowa wplata1 = new Wplata(2000, rachNowak).execute();
+        new Wplata(2000, rachNowak).execute(); // command
+        new Wypłata(500,rachNowak).execute(); // command
+        new Przelew(rachKowalski,rachNowak,300).execute();
+
+
         int odsetkiKowalski = rachKowalski.odsetki();
 
         System.out.println("odsetki=" + odsetkiKowalski);
+
+        
+        System.out.print("Historia Kowalski ");
         rachKowalski.piszHistorie();
+        System.out.print("Historia Nowak ");
         rachNowak.piszHistorie();
     }
 }

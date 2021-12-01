@@ -5,18 +5,21 @@ package com.bartoszwalter.students.bank;
 public class Wypłata implements OperacjaBankowa{
 
     int kwota;
-    int saldo;
+    Rachunek rachunek;
     boolean wykonano;
 
-    public Wypłata(int kwota, int saldo) {
+    public Wypłata(int kwota, Rachunek rachunek) {
         this.kwota = kwota;
-        this.saldo = saldo;
+        this.rachunek = rachunek;
+
+        wykonano = false;
     }
 
     @Override
     public OperacjaBankowa execute() {
 
-        saldo -= kwota;
+        if(rachunek.wyplata(kwota)==0) wykonano=true;
+        else wykonano = false;
 
         return null;
     }

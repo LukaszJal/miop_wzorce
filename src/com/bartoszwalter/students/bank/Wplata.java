@@ -18,6 +18,7 @@ public class Wplata implements OperacjaBankowa{
     public OperacjaBankowa execute() {
 
         rachunek.wplata(kwota);
+        wykonano = true;
 
         return null;
     }
