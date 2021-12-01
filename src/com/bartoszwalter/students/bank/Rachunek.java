@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 //TODO WZORCE DO OGARNIĘCIA DONE
 
-// STATE
-// COMMAND
+// STATE - DONE
+// COMMAND - DONE
 // CHAIN OF RESPONSIBILITY
 // DECORATOR
 // MEDIATOR
@@ -20,6 +20,7 @@ public class Rachunek {
     private int saldo;
     private int dopuszczalnyDebet;
     private ArrayList historia = new ArrayList();
+    private int mechanizmOdsetkowy;
 
     /**
      * Utworzenie rachunku
@@ -32,6 +33,7 @@ public class Rachunek {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.saldo = 0;
+        this.mechanizmOdsetkowy = 1;
     }
 
     /**
@@ -112,20 +114,26 @@ public class Rachunek {
      */
     public int odsetki() {
 
-       MechanizmOdsetkowy tmp1 = new Mechanizm1();
-       tmp1.oblicz(this);
+        MechanizmOdsetkowy mechanizm;
+        int odsetki;
 
-  /*      int odsetki = 0;
+        if (mechanizmOdsetkowy == 1){
+            mechanizm = new Mechanizm1();
+            odsetki = mechanizm.oblicz(this);
+            return odsetki;
+        }
+        else if (mechanizmOdsetkowy == 2){
+            mechanizm = new Mechanizm2();
+            odsetki = mechanizm.oblicz(this);
+            historia.add("Naliczono odsetki w kwocie " + odsetki);
+            return odsetki;
+        }
 
-        if (saldo < 10000)
-            odsetki = (int) (0.01 * saldo);
-        else if (saldo < 50000)
-            odsetki = 100 + (int) (0.02 * (saldo - 10000));
-        else
-            odsetki =  100 + 800 + (int) (0.03 * (saldo - 50000));
+        return -1;
+    }
 
-        historia.add("Naliczono odsetki w kwocie " + odsetki);*/
-
-        return tmp1.oblicz(this);
+    public void zmienMechanizmOdsetkowy(int mechanizmOdsetkowy)
+    {
+        this.mechanizmOdsetkowy = mechanizmOdsetkowy;
     }
 }

@@ -18,7 +18,7 @@ public class Starter {
 
         System.out.println("odsetki=" + odsetkiKowalski);
 
-        
+
         System.out.print("Historia Kowalski ");
         rachKowalski.piszHistorie();
         System.out.print("Historia Nowak ");

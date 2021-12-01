@@ -16,6 +16,8 @@ public class Mechanizm1 implements MechanizmOdsetkowy{
          {
              return (int) (rach.saldo() * 0.05);
          }
+
+
         return 0;
     }
 }
