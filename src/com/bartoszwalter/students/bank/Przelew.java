@@ -17,7 +17,8 @@ public class Przelew implements OperacjaBankowa{
     }
 
     @Override
-    public void execute() {
+    public OperacjaBankowa execute() {
 
+        return null;
     }
 }

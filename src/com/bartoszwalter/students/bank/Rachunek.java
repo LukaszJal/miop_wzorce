@@ -83,11 +83,10 @@ public class Rachunek {
      * Wyświetla historię rachunku
      *
      */
-    public int wplata(int kwota) {
 
-        Wplata nowa_wplata = new Wplata(kwota,this.saldo);
-        nowa_wplata.execute();
-        //saldo += kwota;
+
+    public int wplata(int kwota) {
+        saldo += kwota;
         historia.add("Wpłata: " + kwota + ", saldo: " + saldo);
         return 0;
     }

@@ -5,21 +5,20 @@ package com.bartoszwalter.students.bank;
 public class Wplata implements OperacjaBankowa{
 
     int kwota;
-    int saldo;
+    Rachunek rachunek;
     boolean wykonano;
 
-    public Wplata(int kwota, int saldo) {
+    public Wplata(int kwota, Rachunek rachunek) {
         this.kwota = kwota;
-        this.saldo = saldo;
+        this.rachunek = rachunek;
         this.wykonano = false;
     }
 
     @Override
-    public void execute() {
+    public OperacjaBankowa execute() {
 
-        // Dodaję do lokalnego salda kwote. Ale co z nią dalej ?
-        // execute nie zwraca żadnej wartości. W java brak wskaźników, tylko referencje.
-        saldo += kwota;
+        rachunek.wplata(kwota);
 
+        return null;
     }
 }

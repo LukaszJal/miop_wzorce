@@ -14,9 +14,10 @@ public class Wypłata implements OperacjaBankowa{
     }
 
     @Override
-    public void execute() {
+    public OperacjaBankowa execute() {
 
         saldo -= kwota;
 
+        return null;
     }
 }

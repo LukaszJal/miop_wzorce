@@ -4,6 +4,6 @@ package com.bartoszwalter.students.bank;
 
 public interface OperacjaBankowa {
 
-    public void execute();
+    public OperacjaBankowa execute();
 
 }
